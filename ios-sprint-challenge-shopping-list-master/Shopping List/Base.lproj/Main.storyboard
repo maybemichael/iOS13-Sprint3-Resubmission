@@ -40,6 +40,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pW5-Bz-DQo">
                                             <rect key="frame" x="20" y="57.5" width="180" height="180"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="160" id="9eV-xq-pKW"/>
                                                 <constraint firstAttribute="width" secondItem="pW5-Bz-DQo" secondAttribute="height" multiplier="1:1" id="HoF-3l-dGM"/>
                                             </constraints>
                                         </imageView>
@@ -65,6 +66,11 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="220" height="295"/>
+                                <connections>
+                                    <outlet property="itemAddedLabel" destination="kX2-Jf-yw9" id="oGj-qw-IG1"/>
+                                    <outlet property="itemImageView" destination="pW5-Bz-DQo" id="bln-SF-EjD"/>
+                                    <outlet property="itemNameLabel" destination="zTr-j7-guJ" id="CvI-0d-POE"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

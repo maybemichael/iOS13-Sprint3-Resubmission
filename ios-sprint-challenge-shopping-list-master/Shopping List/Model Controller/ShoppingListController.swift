@@ -24,6 +24,7 @@ class ShoppingListController {
     func toggleAddItem(item: ShoppingItem) {
         guard let itemSelected = shoppingItemsList.firstIndex(of: item) else { return }
         shoppingItemsList[itemSelected].itemAdded.toggle()
+        saveToPersistentStore()
     }
     
     func itemsInCart() -> Int {

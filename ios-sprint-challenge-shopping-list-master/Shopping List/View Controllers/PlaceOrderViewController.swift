@@ -10,6 +10,8 @@ import UIKit
 
 class PlaceOrderViewController: UIViewController {
 
+    var itemCount: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
