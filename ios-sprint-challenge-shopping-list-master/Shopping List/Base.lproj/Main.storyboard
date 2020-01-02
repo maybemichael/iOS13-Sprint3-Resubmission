@@ -40,8 +40,8 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pW5-Bz-DQo">
                                             <rect key="frame" x="20" y="57.5" width="180" height="180"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="160" id="9eV-xq-pKW"/>
-                                                <constraint firstAttribute="width" secondItem="pW5-Bz-DQo" secondAttribute="height" multiplier="1:1" id="HoF-3l-dGM"/>
+                                                <constraint firstAttribute="width" secondItem="pW5-Bz-DQo" secondAttribute="height" multiplier="1:1" id="Zfy-T1-93W"/>
+                                                <constraint firstAttribute="height" constant="160" id="txz-rl-jq5"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTr-j7-guJ">
@@ -56,13 +56,13 @@
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zTr-j7-guJ" secondAttribute="bottom" constant="8" id="6Ct-dm-4qQ"/>
                                         <constraint firstItem="kX2-Jf-yw9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kMO-z0-gPs" secondAttribute="top" constant="8" id="7kd-Kh-oXE"/>
                                         <constraint firstAttribute="trailing" secondItem="pW5-Bz-DQo" secondAttribute="trailing" constant="20" id="9R1-AO-FlM"/>
-                                        <constraint firstItem="kX2-Jf-yw9" firstAttribute="leading" secondItem="pW5-Bz-DQo" secondAttribute="leading" id="CVA-xK-M2M"/>
-                                        <constraint firstItem="zTr-j7-guJ" firstAttribute="trailing" secondItem="pW5-Bz-DQo" secondAttribute="trailing" id="Sqf-DH-AWN"/>
-                                        <constraint firstItem="zTr-j7-guJ" firstAttribute="leading" secondItem="pW5-Bz-DQo" secondAttribute="leading" id="Z2l-Dz-pre"/>
+                                        <constraint firstItem="kX2-Jf-yw9" firstAttribute="leading" secondItem="kMO-z0-gPs" secondAttribute="leading" constant="20" id="Pgo-IK-RzU"/>
+                                        <constraint firstItem="zTr-j7-guJ" firstAttribute="leading" secondItem="kMO-z0-gPs" secondAttribute="leading" constant="20" id="RRO-5K-OfK"/>
+                                        <constraint firstAttribute="trailing" secondItem="zTr-j7-guJ" secondAttribute="trailing" constant="20" id="Smg-7O-hkF"/>
                                         <constraint firstItem="pW5-Bz-DQo" firstAttribute="top" secondItem="kX2-Jf-yw9" secondAttribute="bottom" constant="8" id="f32-zL-Z95"/>
                                         <constraint firstItem="pW5-Bz-DQo" firstAttribute="leading" secondItem="kMO-z0-gPs" secondAttribute="leading" constant="20" id="iNa-oK-xIh"/>
+                                        <constraint firstAttribute="trailing" secondItem="kX2-Jf-yw9" secondAttribute="trailing" constant="20" id="k7H-cX-YHa"/>
                                         <constraint firstItem="zTr-j7-guJ" firstAttribute="top" secondItem="pW5-Bz-DQo" secondAttribute="bottom" constant="8" id="rfi-fG-73U"/>
-                                        <constraint firstItem="kX2-Jf-yw9" firstAttribute="trailing" secondItem="pW5-Bz-DQo" secondAttribute="trailing" id="sf0-Xm-wux"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="220" height="295"/>
@@ -117,6 +117,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um5-JS-op1">
                                 <rect key="frame" x="157" y="227.5" width="100" height="30"/>
                                 <state key="normal" title="Place Order"/>
+                                <connections>
+                                    <action selector="placeOrderTapped:" destination="fHt-ey-NBd" eventType="touchUpInside" id="aep-8e-E8d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -125,7 +128,7 @@
                             <constraint firstItem="PLa-r0-mpE" firstAttribute="leading" secondItem="9YE-2W-DeX" secondAttribute="leading" constant="20" id="94b-Bu-6HI"/>
                             <constraint firstItem="Um5-JS-op1" firstAttribute="leading" secondItem="9YE-2W-DeX" secondAttribute="leading" constant="157" id="9ek-f3-iKY"/>
                             <constraint firstItem="9YE-2W-DeX" firstAttribute="trailing" secondItem="SwG-r0-IYZ" secondAttribute="trailing" constant="20" id="DdW-52-Wnf"/>
-                            <constraint firstItem="9YE-2W-DeX" firstAttribute="bottom" secondItem="Um5-JS-op1" secondAttribute="bottom" constant="604.5" id="LzH-Ok-zzC"/>
+                            <constraint firstItem="9YE-2W-DeX" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Um5-JS-op1" secondAttribute="bottom" constant="20" id="LzH-Ok-zzC"/>
                             <constraint firstItem="SwG-r0-IYZ" firstAttribute="leading" secondItem="9YE-2W-DeX" secondAttribute="leading" constant="20" id="M4u-l7-d8R"/>
                             <constraint firstItem="JBJ-wR-IW1" firstAttribute="leading" secondItem="9YE-2W-DeX" secondAttribute="leading" constant="20" id="MhJ-Wj-gYv"/>
                             <constraint firstItem="PLa-r0-mpE" firstAttribute="top" secondItem="SwG-r0-IYZ" secondAttribute="bottom" constant="8" id="RFj-Et-Z6t"/>
@@ -138,6 +141,11 @@
                         <viewLayoutGuide key="safeArea" id="9YE-2W-DeX"/>
                     </view>
                     <navigationItem key="navigationItem" id="M4g-XV-bGE"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="PLa-r0-mpE" id="shI-YC-UvU"/>
+                        <outlet property="itemCountLabel" destination="JBJ-wR-IW1" id="deu-bI-Tqy"/>
+                        <outlet property="nameTextField" destination="SwG-r0-IYZ" id="eCs-C7-KxN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ha4-5c-fLV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
