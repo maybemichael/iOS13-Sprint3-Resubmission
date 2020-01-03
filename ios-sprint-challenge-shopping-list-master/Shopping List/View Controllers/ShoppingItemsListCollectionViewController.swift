@@ -19,6 +19,8 @@ class ShoppingItemsListCollectionViewController: UICollectionViewController {
     }
 
     
+    
+    
     // MARK: - Navigation
 
     
@@ -36,25 +38,39 @@ class ShoppingItemsListCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return shoppingListController.shoppingItemsList.count
+        var itemCount = 0
+        if section == 0 {
+            itemCount = shoppingListController.itemsNotAdded.count
+        } else {
+            itemCount = shoppingListController.itemsAdded.count
+        }
+        return itemCount
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ShoppingItemCollectionViewCell else { return UICollectionViewCell()}
     
         // Configure the cell
-        let shoppingItem = shoppingListController.shoppingItemsList[indexPath.item]
+        let shoppingItem = itemsAdded(indexPath: indexPath)
+//        let shoppingItem = shoppingListController.shoppingItemsList[indexPath.item]
         cell.shoppingItem = shoppingItem
         
         return cell
     }
-
+    
+    private func itemsAdded(indexPath: IndexPath) -> ShoppingItem {
+        if indexPath.section == 0 {
+            return shoppingListController.itemsNotAdded[indexPath.item]
+        } else {
+            return shoppingListController.itemsAdded[indexPath.item]
+        }
+    }
+    
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

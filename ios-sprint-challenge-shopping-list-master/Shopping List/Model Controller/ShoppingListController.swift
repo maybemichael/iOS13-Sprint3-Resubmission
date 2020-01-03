@@ -12,6 +12,16 @@ class ShoppingListController {
     
     var shoppingItemsList: [ShoppingItem] = []
     
+    var itemsAdded: [ShoppingItem] {
+        loadFromPersistentStore()
+        return shoppingItemsList.filter {$0.itemAdded}
+    }
+    
+    var itemsNotAdded: [ShoppingItem] {
+        loadFromPersistentStore()
+        return shoppingItemsList.filter {$0.itemAdded == false}
+    }
+    
     func createShoppingItemList() {
         let itemNames = ["Apple", "Grapes", "Milk", "Muffin", "Popcorn", "Soda", "Strawberries"]
         
@@ -19,6 +29,11 @@ class ShoppingListController {
             let shopItem = ShoppingItem(itemName: item)
             shoppingItemsList.append(shopItem)
         }
+    }
+    
+    func createNewItem(name: String, itemAdded: Bool) {
+        let newItem = ShoppingItem(itemName: name, itemAdded: itemAdded)
+        shoppingItemsList.append(newItem)
     }
     
     func toggleAddItem(item: ShoppingItem) {
